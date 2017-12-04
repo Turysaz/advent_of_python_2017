@@ -8,35 +8,30 @@ def neighbours(pos):
 
 def get_next_field(x,y, level, count):
     s = count / (level*2)
-    print(x,y,s,count,level)
     if s == 0 or s == 4: return x,y+1
     if s == 1: return x-1,y
     if s == 2: return x, y-1
     if s == 3: return x+1, y
 
-def get_tile_greater_than(query):
+def get_first_greater_than(query):
     grid = {(0,0) : 1}
-    x,y = 1,0
-    level_count = 1
-    level = 1
+    x, y = 1, 0
+    level, count = 1, 1
     while True:
         next_sum = sum([grid[p] for p in neighbours((x,y)) if p in grid])
-        if (next_sum) > max_value:
-            print(next_sum)
-            return (x,y)
+
+        if (next_sum) > max_value : return next_sum
 
         grid.update({(x,y) : next_sum})
 
-        if (x,y) == (level,-level):
+        if (x,y) == (level, -level):
             level += 1
-            level_count = 1
+            count = 1
             x += 1
             continue
 
-        x, y = get_next_field(x,y,level, level_count)
-        level_count += 1
-
+        x, y = get_next_field(x, y, level, count)
+        count += 1
 
 max_value = 368078
-#max_value = 800
-print(get_tile_greater_than(max_value))
+print(get_first_greater_than(max_value))
