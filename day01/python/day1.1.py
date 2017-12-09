@@ -1,5 +1,5 @@
 
-f = open("day1.txt")
+f = open("../input.txt")
 chars = f.readlines()[0][:-1]
 f.close()
 
@@ -13,7 +13,7 @@ def get_neighbour(line, index, step):
         i_new -= l
 
     return line[i_new]
-        
+
 
 s = 0
 
@@ -28,8 +28,7 @@ while i < l:
 
     if c == cnext:
         s += int(c)
-    
+
     i += 1
 
 print(s)
-        

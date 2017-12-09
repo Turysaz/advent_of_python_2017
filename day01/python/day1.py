@@ -1,5 +1,5 @@
 
-f = open("day1.txt")
+f = open("../input.txt")
 lines = f.readlines()[0][:-1]
 f.close()
 
@@ -23,8 +23,7 @@ while i < l:
 
     if c == cnext:
         s += int(c)
-    
+
     i += 1
 
 print(s)
-        

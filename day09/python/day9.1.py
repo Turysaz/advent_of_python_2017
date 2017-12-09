@@ -1,5 +1,5 @@
 
-f = open("input.txt")
+f = open("../input.txt")
 stream = f.read()
 f.close()
 
@@ -15,6 +15,7 @@ index = 0
 depth = 1
 garbage = False
 score = 0
+garb_cnt = 0
 
 while index < len(stream):
     c = stream[index]
@@ -28,7 +29,9 @@ while index < len(stream):
         garbage = False
         continue
 
-    if garbage : continue
+    if garbage:
+        garb_cnt += 1
+        continue
 
     if c == "<":
         garbage = True
@@ -43,4 +46,4 @@ while index < len(stream):
         depth -= 1
         continue
 
-print score
+print garb_cnt

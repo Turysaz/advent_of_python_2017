@@ -1,6 +1,6 @@
 import re
 
-f = open("input.txt")
+f = open("../input.txt")
 #f = open("test-input.txt")
 lines = [l.strip() for l in f.readlines()]
 f.close()

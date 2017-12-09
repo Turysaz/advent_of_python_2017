@@ -1,5 +1,5 @@
 
-f = open("input.txt")
+f = open("../input.txt")
 lines = f.readlines()
 f.close()
 
@@ -11,4 +11,3 @@ for line in lines:
     checksum += (numbers[-1] - numbers[0])
 
 print(checksum)
-
