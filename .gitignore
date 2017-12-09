@@ -1,3 +1,5 @@
 
+*/rust/target/
+
 *.pyc
 day08/output.py
