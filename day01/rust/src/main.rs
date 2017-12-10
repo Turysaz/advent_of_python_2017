@@ -5,6 +5,7 @@ use std::io::Read;
 fn main() {
     //part_one(String::from("112234"));
     part_one(read_input());
+    part_two(read_input());
 }
 
 fn read_input() -> String{
@@ -16,6 +17,22 @@ fn read_input() -> String{
     content
 }
 
+fn make_circular(input : &str) -> String {
+    let bytes = input.as_bytes();
+    //let last = bytes[&bytes.len() - 1] as char;
+    //println!("{:?}", last);
+    let first = bytes[0] as char;
+    let mut circ = String::from(input);
+    circ.push(first);
+    circ
+}
+
+fn char_to_int(c : char) -> u32{
+    let mut string = String::new();
+    string.push(c);
+    string.parse().expect("Cannot parse: Not a number!")
+}
+
 fn part_one(input : String){
 
     let input = &make_circular(&(input.trim()));
@@ -25,28 +42,29 @@ fn part_one(input : String){
     let mut checksum = 0;
 
     while index < input.len() - 1{
-        let mut left_s = String::new();
-        left_s.push(input[index] as char);
-        let left_n : u32 = left_s.parse().expect("not a number");
-
-        let mut right_s = String::new();
-        right_s.push(input[index + 1] as char);
-        let right_n : u32 = right_s.parse().expect("not a number");
-
+        let left_n = char_to_int(input[index] as char);
+        let right_n = char_to_int(input[index + 1] as char);
         if left_n == right_n{
             checksum += left_n;
         }
         index += 1;
     }
-    println!("{:?}", checksum);
+    println!("Solution part 1: {}", checksum);
 }
 
-fn make_circular(input : &str) -> String {
-    let bytes = input.as_bytes();
-    //let last = bytes[&bytes.len() - 1] as char;
-    //println!("{:?}", last);
-    let first = bytes[0] as char;
-    let mut circ = String::from(input);
-    circ.push(first);
-    circ
+fn part_two(input : String){
+    let input = input.as_bytes();
+    let mut checksum = 0;
+    let mut index_left = 0;
+    let mut index_right = input.len() / 2;
+    while index_left < input.len() / 2 {
+        let left = char_to_int(input[index_left] as char);
+        let right = char_to_int(input[index_right] as char);
+        if left == right{
+            checksum += left*2;
+        }
+        index_left += 1;
+        index_right += 1;
+    }
+    println!("Solution part 2: {}", checksum);
 }

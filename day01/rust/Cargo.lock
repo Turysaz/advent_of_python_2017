@@ -1,4 +1,4 @@
 [root]
-name = "rust"
+name = "aoc17-day1"
 version = "0.1.0"
 
