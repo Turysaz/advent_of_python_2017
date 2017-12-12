@@ -1,5 +1,5 @@
 
-f = open("../input.txt")
+f = open("input.txt")
 instructions = [int(num[:-1]) for num in f.readlines()]
 f.close()
 

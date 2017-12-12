@@ -1,6 +1,6 @@
 
 
-f = open("../input.txt")
+f = open("input.txt")
 instr = f.read().strip().split(',')
 f.close()
 

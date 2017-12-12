@@ -24,7 +24,7 @@ print(get_hash(lengths, l))
 
 
 # original
-f = open("../input.txt")
+f = open("input.txt")
 lengths = [int(l) for l in f.read().split(',')]
 f.close()
 l = range(256)

@@ -47,7 +47,7 @@ def get_hash(string):
 
 
 # original
-f = open("../input.txt")
+f = open("input.txt")
 lengths = f.read().strip()
 f.close()
 

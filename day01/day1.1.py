@@ -1,5 +1,5 @@
 
-f = open("../input.txt")
+f = open("input.txt")
 chars = f.readlines()[0][:-1]
 f.close()
 
