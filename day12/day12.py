@@ -6,7 +6,7 @@ def get_connections(lines):
     return connections
 
 def get_group_for(x, connections):
-    group = {0}
+    group = {x}
     l = 0
     while l < len(group):
         l = len(group)
@@ -21,3 +21,5 @@ def get_group_for(x, connections):
 f = open("input.txt")
 connections = get_connections(f.readlines())
 f.close()
+
+print(len(get_group_for(0, connections)))
