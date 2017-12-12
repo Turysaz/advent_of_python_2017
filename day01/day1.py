@@ -1,5 +1,5 @@
 
-f = open("input.txt")
+f = open("../input/day01.txt")
 lines = f.readlines()[0][:-1]
 f.close()
 
@@ -19,11 +19,9 @@ while i < l:
     else:
         cnext = lines[i+1]
 
-    print(c + ", " + cnext)
-
     if c == cnext:
         s += int(c)
 
     i += 1
 
-print(s)
+print("01/1: " + str(s))

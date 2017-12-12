@@ -1,5 +1,5 @@
 
-f = open("input.txt")
+f = open("../input/day06.txt")
 banks = [int(x) for x in f.read().split()]
 f.close()
 

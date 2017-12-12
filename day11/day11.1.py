@@ -1,5 +1,5 @@
 
-f = open("input.txt")
+f = open("../input/day11.txt")
 instr = f.read().strip().split(',')
 f.close()
 

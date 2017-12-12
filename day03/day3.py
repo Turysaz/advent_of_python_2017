@@ -58,12 +58,17 @@ def get_coordinates(query):
     return (x+1, query - br - x)
 
 def get_distance(query):
-    print("searching for: " + str(query))
+    #print("searching for: " + str(query))
 
     c = get_coordinates(query)
-    print("Coordinates: " + str(c))
+    #print("Coordinates: " + str(c))
 
     return abs(c[0]) + abs(c[1])
 
 
-print(get_distance(368078))
+max_value = None
+#max_value = input("value? ")
+with open("../input/day03.txt") as f:
+    max_value = int(f.read().strip())
+
+print(get_distance(max_value))

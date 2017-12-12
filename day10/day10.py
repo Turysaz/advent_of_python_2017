@@ -20,11 +20,11 @@ def get_hash(source, baselist):
 # test data
 lengths = [3,4,1,5]
 l = [0,1,2,3,4]
-print(get_hash(lengths, l))
+#print(get_hash(lengths, l))
 
 
 # original
-f = open("input.txt")
+f = open("../input/day10.txt")
 lengths = [int(l) for l in f.read().split(',')]
 f.close()
 l = range(256)

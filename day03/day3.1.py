@@ -33,5 +33,9 @@ def get_first_greater_than(query):
         x, y = get_next_field(x, y, level, count)
         count += 1
 
-max_value = 368078
+max_value = None
+#max_value = input("value? ")
+with open("../input/day03.txt") as f:
+    max_value = int(f.read().strip())
+
 print(get_first_greater_than(max_value))

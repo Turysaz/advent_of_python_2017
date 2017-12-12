@@ -1,5 +1,5 @@
 
-f = open("input.txt")
+f = open("../input/day02.txt")
 lines = f.readlines()
 f.close()
 
@@ -11,7 +11,6 @@ for line in lines:
     numbers.sort()
 
     solution_found = False
-    print(numbers)
 
     for c_index in range(len(numbers)):
 
@@ -24,13 +23,11 @@ for line in lines:
             divisor = numbers[d_index]
 
             if divisor > counter / 2:
-                print("skipping " + str(counter) + " / " + str(divisor))
                 break
 
             if counter % divisor == 0:
-                print("MATCH " + str(counter) + " / " + str(divisor))
                 checksum += counter / divisor
                 solution_found = True
                 break
 
-print(checksum)
+print("02/2: " + str(checksum))

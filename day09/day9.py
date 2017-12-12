@@ -1,5 +1,5 @@
 
-f = open("input.txt")
+f = open("../input/day09.txt")
 stream = f.read()
 f.close()
 

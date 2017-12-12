@@ -18,7 +18,7 @@ def get_group_for(x, connections):
         group = group_new
     return group
 
-f = open("input.txt")
+f = open("../input/day12.txt")
 connections = get_connections(f.readlines())
 f.close()
 

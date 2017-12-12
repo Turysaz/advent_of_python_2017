@@ -1,5 +1,5 @@
 
-f = open("input.txt")
+f = open("../input/day01.txt")
 chars = f.readlines()[0][:-1]
 f.close()
 
@@ -31,4 +31,4 @@ while i < l:
 
     i += 1
 
-print(s)
+print("01/2: " + str(s))

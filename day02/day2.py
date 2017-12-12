@@ -1,5 +1,5 @@
 
-f = open("input.txt")
+f = open("../input/day02.txt")
 lines = f.readlines()
 f.close()
 
@@ -10,4 +10,4 @@ for line in lines:
     numbers.sort()
     checksum += (numbers[-1] - numbers[0])
 
-print(checksum)
+print("02/1: " + str(checksum))

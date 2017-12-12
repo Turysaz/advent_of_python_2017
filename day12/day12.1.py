@@ -28,7 +28,7 @@ def get_all_groups(connections):
         for n in g: seen.add(n)
     return groups
 
-f = open("input.txt")
+f = open("../input/day12.txt")
 connections = get_connections(f.readlines())
 f.close()
 

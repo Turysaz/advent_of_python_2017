@@ -1,5 +1,5 @@
 
-f = open("input.txt")
+f = open("../input/day04.txt")
 lines = f.readlines()
 f.close()
 
