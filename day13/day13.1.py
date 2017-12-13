@@ -9,31 +9,14 @@ ranges = {}
 for layer in lines:
     ranges.update({layer[0]:layer[1]})
 
-def simulate(ranges, delay = 0):
-    positions, directions = {}, {}
-    for x in ranges:
-        positions.update({x:0})
-        directions.update({x:1})
-
-    pack_pos, severity = -delay, 0
-    while pack_pos < max(ranges)+1:
-        if pack_pos in positions:
-            if positions[pack_pos] == 0:
-                return False
-
-        for i in positions:
-            positions[i] += directions[i]
-            if positions[i] == 0 or positions[i] == ranges[i]-1:
-                directions[i] *= -1
-
-        pack_pos += 1
-
-    return True
-
-i = 0
+i = 1
 while True:
-    print(i)
-    if simulate(ranges, i) :
-        print("\n" + str(i))
+    caught = False
+    for l in ranges:
+        if (l+i) % (ranges[l]*2-2) == 0:
+            caught = True
+            break
+    if not caught:
+        print(i)
         break
-    i+=1
+    i += 1
