@@ -1,0 +1,2 @@
+from functions import get_hash_hex_string_for_string as hex_str_for_str
+from functions import get_hash_bin_string_for_string as bin_str_for_str
